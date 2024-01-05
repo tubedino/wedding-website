@@ -175,35 +175,7 @@ $(document).ready(function () {
         $('#btn-show-content').toggleClass('toggle-map-content');
     });
 
-    /********************** Add to Calendar **********************/
-    var myCalendar = createCalendar({
-        options: {
-            class: '',
-            // You can pass an ID. If you don't, one will be generated for you
-            id: ''
-        },
-        data: {
-            // Event title
-            title: "Ella und Patrick's Hochzeit",
-
-            // Event start date
-            start: new Date('Jun 20, 2024 14:30'),
-
-            // Event duration (IN MINUTES)
-            // duration: 120,
-
-            // You can also choose to set an end time
-            // If an end time is set, this will take precedence over duration
-
-            // Event Address
-            address: 'Schlössli Utenberg, Utenberg, 6006 Luzern',
-
-            // Event Description
-            description: "Wir können es kaum erwarten euch an unserem grossen Tag zu sehen. Falls du irgendwelche Fragen hast, kannst du Janine oder Andong kontaktieren und sie werden dir gerne weiterhelfen."
-        }
-    });
-
-    $('#add-to-cal').html(myCalendar);
+  
 
 
     /********************** RSVP **********************/
@@ -211,11 +183,11 @@ $(document).ready(function () {
         e.preventDefault();
         var data = $(this).serialize();
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
-
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
+        $('#alert-wrapper').html(alert_markup('info', '<strong>Eine Sekunde!</strong> Wir speichern deine Angaben<span class="en"><strong> Just a sec!</strong> We are saving your details.</span>'));
+        console.log($('#invite_code'))
+        console.log(MD5($('#invite_code').val()))
+        if (MD5($('#invite_code').val()) !== '901cea744e4bbba214c30dc018128cf5'){
+            $('#alert-wrapper').html(alert_markup('danger', 'Falscher Invite Code / <span class="en">Your invite code is incorrect.</span>'));
         } else {
             $.post('https://script.google.com/macros/s/AKfycbxqHkLsv-ip05bgfL20TwOnl59DAaELoGpSR2wIjzHxDI0P9fK9n5wQEaaW4A3pxR3R/exec', data)
                 .done(function (data) {
@@ -229,7 +201,7 @@ $(document).ready(function () {
                 })
                 .fail(function (data) {
                     console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+                    $('#alert-wrapper').html(alert_markup('danger', 'Server Probleme / <span class="en">There is some issue with the server.</span>'));
                 });
         }
     });
