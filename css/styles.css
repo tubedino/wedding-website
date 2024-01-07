@@ -898,7 +898,6 @@ header .member-actions {
 }
 
 .brief {
-    max-width: 300px; 
     height: auto;
     border-radius: 8px;
 	display: block; 
