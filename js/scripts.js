@@ -186,10 +186,10 @@ $(document).ready(function () {
         $('#alert-wrapper').html(alert_markup('info', '<strong>Eine Sekunde!</strong> Wir speichern deine Angaben<span class="en"><strong> Just a sec!</strong> We are saving your details.</span>'));
         console.log($('#invite_code'))
         console.log(MD5($('#invite_code').val()))
-        if (MD5($('#invite_code').val()) !== '901cea744e4bbba214c30dc018128cf5'){
+        if (MD5($('#invite_code').val()) !== '92402a869a178b4c82b2de4cb3b61a92'){
             $('#alert-wrapper').html(alert_markup('danger', 'Falscher Invite Code / <span class="en">Your invite code is incorrect.</span>'));
         } else {
-            $.post('https://script.google.com/macros/s/AKfycbxqHkLsv-ip05bgfL20TwOnl59DAaELoGpSR2wIjzHxDI0P9fK9n5wQEaaW4A3pxR3R/exec', data)
+            $.post('https://script.google.com/macros/s/AKfycbz7rPnNIgyC06kfE1avmXv4tnXOHxAquaIfi5kO7uPUPTVkyQ6I0WMH_AdlHaGqas2k/exec', data)
                 .done(function (data) {
                     console.log(data);
                     if (data.result === "error") {
