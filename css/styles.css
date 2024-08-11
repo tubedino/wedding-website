@@ -967,7 +967,25 @@ body.modal-open {
 .modal-body {
 	padding:25px
 }
+.splide{
+	padding:40px 100px;
+	
+}
 
+.splide__track{
+	text-align: center;
+}
+.splide__slide img {
+	text-align: center;
+	background-position: top center !important;
+	height: 85vh
+  }
+
+.splide__pagination__page.is-active {
+    background: rgb(15, 15, 15) !important;
+    transform: scale(1.4);
+    z-index: 1;
+}
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

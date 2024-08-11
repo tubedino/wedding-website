@@ -24,6 +24,7 @@
     <link rel="manifest" href="manifest.json">
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
 
+
     <script>
         // load css files from CDN if local node_modules fail
         function loadCssFromCDN(css) {
@@ -49,6 +50,14 @@
             }
         }
     </script>
+    <script>
+        document.addEventListener( 'DOMContentLoaded', function () {
+            new Splide( '#image-carousel', {
+                type   : 'loop',
+                widthRatio: 0.5,
+            } ).mount();
+        } );
+      </script>
 
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -58,7 +67,9 @@
     <link rel="stylesheet" href="css/queries.css">
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" onerror="loadCssFromCDN('font-awesome.css')">
+    <link rel="stylesheet" href="css/splide/dist/css/splide.min.css">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="js/@splidejs/splide/dist/js/splide.min.js"></script>
 </head>
 <body id="top">
 <!--[if lt IE 8]>
@@ -205,9 +216,9 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h3 class="header">Fotos / Pictures</h3>
-                <p>Nach der Hochzeit wirst du hier einen Link zu den Bildern finden.
+                <p>Alle Bilder findest du unter dem folgenden Link: <a href="https://gallery.ezechielphotography.com/0g57P93uAtdK5" class="class1">https://gallery.ezechielphotography.com/0g57P93uAtdK5</a>
                 <br> <br> <span class="en"> 
-                Here, you will find a link to the pictures after the wedding.</span>
+                All pictures can be found via the following link: <a href="https://gallery.ezechielphotography.com/0g57P93uAtdK5" class="class1">https://gallery.ezechielphotography.com/0g57P93uAtdK5</a></span>
                 </p>
             </div>
         </div>
@@ -215,7 +226,46 @@
     </div>
 </section>
 
+<section id="image-carousel" class="splide" aria-label="Beautiful Images">
 
+    <div class="splide__track">
+          <ul class="splide__list">
+              <li class="splide__slide">
+                  <img src="img/img1.jpg" alt="">
+              </li>
+              <li class="splide__slide">
+                  <img src="img/img2.jpg" alt="">
+              </li>
+              <li class="splide__slide">
+                  <img src="img/img3.jpg" alt="">
+              </li>
+              <li class="splide__slide">
+                <img src="img/img4.jpg" alt="">
+              </li>
+              <li class="splide__slide">
+                <img src="img/img5.jpg" alt="">
+            </li>
+            <li class="splide__slide">
+                <img src="img/img6.jpg" alt="">
+            </li>
+            <li class="splide__slide">
+                <img src="img/img7.jpg" alt="">
+            </li>
+            <li class="splide__slide">
+                <img src="img/img8.jpg" alt="">
+            </li>
+            <li class="splide__slide">
+                <img src="img/img9.jpg" alt="">
+            </li>
+            <li class="splide__slide">
+                <img src="img/img10.jpg" alt="">
+            </li>
+
+          </ul>
+    </div>
+
+  </section>
+  
 
 <section id="video-bg" class="hidden-sm hidden-xs">
     <div id="bgndVideo" class="player"
